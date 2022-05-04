@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 import { toArray } from './util'
 import { Options } from './options'
 import { shouldEmbed, embedResources } from './embedResources'
@@ -122,7 +123,7 @@ async function getCSSRules(
   const deferreds: Promise<number | void>[] = []
 
   // First loop inlines imports
-  styleSheets.forEach((sheet) => {
+  styleSheets.forEach((sheet: any) => {
     if ('cssRules' in sheet) {
       try {
         toArray<CSSRule>(sheet.hasOwnProperty('cssRules')).forEach(
@@ -170,7 +171,10 @@ async function getCSSRules(
               )
               .then((cssText) =>
                 parseCSS(cssText).forEach((rule) => {
-                  inline.insertRule(rule, sheet.hasOwnProperty('cssRules').length)
+                  inline.insertRule(
+                    rule,
+                    sheet.hasOwnProperty('cssRules').length,
+                  )
                 }),
               )
               .catch((err) => {

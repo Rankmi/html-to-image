@@ -1,6 +1,6 @@
 {
   "name": "html-to-image",
-  "version": "1.9.0",
+  "version": "1.0.0",
   "description": "Generates an image from a DOM node using HTML5 canvas and SVG.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -57,8 +57,7 @@
     "name": "bubkooo",
     "email": "bubkoo.wy@gmail.com"
   },
-  "contributors": [
-    {
+  "contributors": [{
       "name": "bubkooo",
       "email": "bubkoo.wy@gmail.com"
     },
